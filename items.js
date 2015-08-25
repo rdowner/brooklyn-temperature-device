@@ -1,0 +1,126 @@
+// Copyright 2015 Richard Downer
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// ItemLister extracted documentation for the catalog items in this project.
+
+var items = {
+  "entities" : [ {
+    "type" : "demo.temperature.DeviceEntity",
+    "name" : "Temperature Sensor/Control Device",
+    "description" : "Connects to the HTTP API provided by the temperature sensor and control device, providing Brooklyn sensors to read state, and effectors to change the controls.",
+    "iconUrl" : "",
+    "config" : [ {
+      "name" : "host",
+      "type" : "java.lang.String",
+      "defaultValue" : null,
+      "description" : "Hostname or IP address of the temperature sensor",
+      "reconfigurable" : false,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    }, {
+      "name" : "port",
+      "type" : "java.lang.String",
+      "defaultValue" : null,
+      "description" : "Port number of the temperature sensor",
+      "reconfigurable" : false,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    } ],
+    "sensors" : [ {
+      "name" : "temperature",
+      "type" : "java.lang.Double",
+      "description" : "Reading from the temperature sensor in degrees celsius",
+      "links" : { }
+    } ],
+    "effectors" : [ {
+      "name" : "relay1Off",
+      "returnType" : "void",
+      "parameters" : [ ],
+      "description" : "Switch relay 1 off",
+      "links" : null
+    }, {
+      "name" : "relay1On",
+      "returnType" : "void",
+      "parameters" : [ ],
+      "description" : "Switch relay 1 on",
+      "links" : null
+    }, {
+      "name" : "relay2Off",
+      "returnType" : "void",
+      "parameters" : [ ],
+      "description" : "Switch relay 2 off",
+      "links" : null
+    }, {
+      "name" : "relay2On",
+      "returnType" : "void",
+      "parameters" : [ ],
+      "description" : "Switch relay 2 on",
+      "links" : null
+    } ]
+  } ],
+  "policies" : [ {
+    "type" : "demo.temperature.FlipFlopPolicy",
+    "name" : "flip-flop policy",
+    "description" : "a simple policy which monitors a sensor against a threshold value; if the value transitions above the threshold an 'on' effector is invoked; if the value transistions belofe the threshold an 'off' effector is invoked.",
+    "iconUrl" : "",
+    "config" : [ {
+      "name" : "metric",
+      "type" : "brooklyn.event.AttributeSensor",
+      "defaultValue" : null,
+      "description" : null,
+      "reconfigurable" : false,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    }, {
+      "name" : "offEffectorName",
+      "type" : "java.lang.String",
+      "defaultValue" : null,
+      "description" : "effector to call when sensor goes below the threshold",
+      "reconfigurable" : false,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    }, {
+      "name" : "onEffectorName",
+      "type" : "java.lang.String",
+      "defaultValue" : null,
+      "description" : "effector to call when sensor goes above the threshold",
+      "reconfigurable" : false,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    }, {
+      "name" : "threshold",
+      "type" : "java.lang.Double",
+      "defaultValue" : 30.0,
+      "description" : "the threshold which causes an effector invocation",
+      "reconfigurable" : true,
+      "label" : null,
+      "priority" : null,
+      "possibleValues" : null,
+      "links" : null
+    } ]
+  } ],
+  "enrichers" : [ ],
+  "locations" : [ ],
+  "locationResolvers" : [ "brooklyn.catalog", "byon", "host", "id", "jclouds", "jcloudsByon", "localhost", "multi", "named", "pool", "portForwardManager", "single" ]
+}
