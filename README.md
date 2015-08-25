@@ -26,6 +26,8 @@ This project consists of three parts:
 * **Brooklyn catalog items**: an entity and a policy which enables controlling the relay channels depending on the
   temperature reading
 
+![Temperature sensor and controller hardware](temperature-hardware.jpg)
+
 
 Disclaimer
 ----------
