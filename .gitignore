@@ -1,5 +1,8 @@
 # Editor backups
 *~
+# Brooklyn log files
+brooklyn.info.log
+brooklyn.debug.log
 
 #############
 # https://github.com/github/gitignore/blob/master/Maven.gitignore
