@@ -14,7 +14,7 @@
 //
 // ItemLister extracted documentation for the catalog items in this project.
 
-var items = {
+{
   "entities" : [ {
     "type" : "demo.temperature.DeviceEntity",
     "name" : "Temperature Sensor/Control Device",

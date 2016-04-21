@@ -17,12 +17,18 @@
 brooklyn.catalog:
   id: Temperature Sensor/Control Device Driver
   version: 0.2.0-SNAPSHOT
+  description: Brooklyn entities for controller a temperature sensor and relay controller device
   license: Apache-2.0
   maintainer_name: Richard Downer
   maintainer_email: richard@apache.org
   issues_url: https://github.com/rdowner/brooklyn-temperature-device/issues
   brooklyn.libraries:
   - https://github.com/rdowner/brooklyn-temperature-device/releases/download/0.2.0-SNAPSHOT/temperature-0.2.0-SNAPSHOT.jar
+  publish:
+    license_code: Apache-2.0
+    overview: README.md
+    reference: reference.json
+    changelog: CHANGELOG.md
   items:
   - id: DeviceEntity
     item:
